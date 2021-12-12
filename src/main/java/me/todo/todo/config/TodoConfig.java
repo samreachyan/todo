@@ -1,6 +1,6 @@
 package me.todo.todo.config;
 
-import me.todo.todo.model.TodoValidator;
+import me.todo.todo.entity.TodoValidator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

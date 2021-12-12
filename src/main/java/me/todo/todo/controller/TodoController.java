@@ -1,6 +1,6 @@
 package me.todo.todo.controller;
 
-import me.todo.todo.model.Todo;
+import me.todo.todo.entity.Todo;
 import me.todo.todo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @Controller
 public class TodoController {

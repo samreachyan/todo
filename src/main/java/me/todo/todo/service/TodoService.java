@@ -1,7 +1,6 @@
 package me.todo.todo.service;
 
-import me.todo.todo.model.Todo;
-import me.todo.todo.model.TodoValidator;
+import me.todo.todo.entity.Todo;
 import me.todo.todo.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

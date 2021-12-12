@@ -1,7 +1,7 @@
 package me.todo.todo.controller;
 
 
-import me.todo.todo.model.Todo;
+import me.todo.todo.entity.Todo;
 import me.todo.todo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

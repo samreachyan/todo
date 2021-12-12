@@ -1,17 +1,13 @@
 package me.todo.todo.controller;
 
 import lombok.RequiredArgsConstructor;
-import me.todo.todo.model.Address;
-import me.todo.todo.model.User;
-import me.todo.todo.repository.AddressRepository;
-import me.todo.todo.repository.UserRepository;
+import me.todo.todo.entity.User;
 import me.todo.todo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collections;
 import java.util.List;
 
 @RestController

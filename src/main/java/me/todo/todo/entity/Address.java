@@ -1,9 +1,8 @@
-package me.todo.todo.model;
+package me.todo.todo.entity;
 
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Data

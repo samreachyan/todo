@@ -1,6 +1,6 @@
 package me.todo.todo.service;
 
-import me.todo.todo.model.User;
+import me.todo.todo.entity.User;
 import me.todo.todo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

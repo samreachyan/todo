@@ -1,4 +1,4 @@
-package me.todo.todo.model;
+package me.todo.todo.entity;
 
 import org.springframework.stereotype.Component;
 import org.thymeleaf.util.StringUtils;
