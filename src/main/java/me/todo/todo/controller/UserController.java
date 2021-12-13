@@ -3,6 +3,7 @@ package me.todo.todo.controller;
 import me.todo.todo.entity.User;
 import me.todo.todo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -39,7 +40,12 @@ public class UserController {
             redirectAttributes.addFlashAttribute("user", user);
             return "signup";
         } else {
+            // Encrypt password
+            BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            String encodePassword = passwordEncoder.encode(user.getPassword());
+            user.setPassword(encodePassword);
             userService.saveUser(user);
+
             return "login";
         }
     }
