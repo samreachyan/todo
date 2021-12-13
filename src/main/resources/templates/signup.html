@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Todo - Sign Up</title>
+    <!--css-->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <!--js-->
+    <script th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body>
+<div th:if="${param.error}">
+    Invalid information
+</div>
+
+<form class="col-md-8" th:action="@{/signup}" th:object="${user}"  method="post">
+    <div class="mb-3"><label class="form-label"> First Name <input class="form-control" type="text" name="firstName" th:value="*{firstName}"/><span class="badge bg-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span></label></div>
+    <div class="mb-3"><label class="form-label"> Last Name <input class="form-control" type="text" name="lastName" th:value="*{lastName}"/><span class="badge bg-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span> </label></div>
+    <div class="mb-3"><label class="form-label"> Username <input class="form-control" type="text" name="username" th:value="*{username}"/><span class="badge bg-danger" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span></label></div>
+    <div class="mb-3"><label class="form-label"> Email <input class="form-control" type="text" name="email" th:value="*{email}" /><span class="badge bg-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span></label></div>
+    <div class="mb-3"><label class="form-label"> Password <input class="form-control" type="password" name="password" th:value="*{password}" /><span class="badge bg-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span></label></div>
+    <div><input type="submit" class="btn btn-primary" value="Sign Up"/></div>
+</form>
+
+<a th:href="@{/login}" type="button" class="btn btn-info btn-lg px-4 me-sm-3">Login Account</a>
+
+</body>
+</html>

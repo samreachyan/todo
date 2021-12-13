@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Todo - Login</title>
+    <!--css-->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+
+    <!--js-->
+    <script th:src="@{/js/bootstrap.js}"></script>
+</head>
+<body>
+    <div th:if="${param.error}">
+        Invalid username and password.
+    </div>
+    <div th:if="${param.logout}">
+        You have been logged out.
+    </div>
+
+    <form class="col-md-8" th:action="@{/login}" method="post">
+        <div class="mb-3"><label class="form-label"> Username <input class="form-control" type="text" name="username"/> </label></div>
+        <div class="mb-3"><label class="form-label"> Password <input class="form-control" type="password" name="password"/> </label></div>
+        <div><input type="submit" class="btn btn-primary" value="Sign In"/></div>
+    </form>
+    <a th:href="@{/signup}" type="button" class="btn btn-info btn-lg px-4 me-sm-3">Sign Up Account</a>
+</body>
+</html>
