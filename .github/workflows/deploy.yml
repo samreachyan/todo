@@ -5,26 +5,25 @@ on:
     branch-ignore:
       - main
       - master
-
 jobs:
-  run-junit-test:
+  run-unit-tests:
     runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Step Java
+      - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          java-version: 11
+          java-version: '11'
           distribution: 'adopt'
 
-      - name: Step Maven
-        uses: stCarolas/setup-maven@4.4
+      - name: Setup Maven
+        uses: stCarolas/setup-maven@v4.4
         with:
           maven-version: 3.8.2
 
-      - name: JUnit Test
+      - name: JUnit Tests
         run: mvn clean package
 
       - name: Rename the artifact
